@@ -1,0 +1,19 @@
+﻿@model Deloitte_ToDoList9.Models.Deloittes_ToDoList
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Deloitte_ToDoListScripts/ToDoList.js"></script>
+    <script src="~/Deloitte_ToDoListScripts/CheckBoxEventListener.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<div id="deloitte_toDoList"></div>
+<div id="deloitte_createNewtoDo">
+    <span>@Html.ActionLink("Add New Task", "Create")</span>
+</div>
+
+

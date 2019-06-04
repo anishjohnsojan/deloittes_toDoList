@@ -1,0 +1,58 @@
+﻿@model Deloitte_ToDoList9.Models.Deloittes_ToDoList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Deloittes_ToDoList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Task_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Task_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Task)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Task)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Task_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Task_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Task_IsChecked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Task_IsChecked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Task_LastUpdated_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Task_LastUpdated_Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Task_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

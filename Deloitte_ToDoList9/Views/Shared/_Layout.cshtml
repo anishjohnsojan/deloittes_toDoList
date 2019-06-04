@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My Deloittes To Do List ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @using Microsoft.AspNet.Identity
+                @if (Request.IsAuthenticated)
+                {
+                    
+                        @Html.AntiForgeryToken()
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                @Html.Display(User.Identity.GetUserName().ToString().ToUpper() + "'s ToDo List", "Index", "Deloittes_ToDoList")
+                            </li>
+                        </ul>
+                   
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><span>Deloitte's ToDo List</span></li>
+                    </ul>
+                } 
+            </div>
+            @*<div class="navbar-collapse collapse">*@
+                @*<ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Login for ToDo List", "Login", "Account",routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    </ul>*@
+                    @Html.Partial("_LoginPartial")
+                @*</div>*@
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; My Deloittes To Do List ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
