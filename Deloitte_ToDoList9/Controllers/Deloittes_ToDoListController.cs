@@ -156,6 +156,7 @@ namespace Deloitte_ToDoList9.Controllers
                 return HttpNotFound();
             }
             else { deloittes_ToDoList.Task_IsChecked = val;
+                deloittes_ToDoList.Task_LastUpdated_Date = DateTime.Now;
                 db.Entry(deloittes_ToDoList).State = EntityState.Modified;
                 db.SaveChanges();
             }

@@ -36,7 +36,7 @@
                 @Html.DisplayFor(modelItem => item.Task_Description, new { id = item.Task_Id })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Task_IsChecked, new { id = item.Task_Id, @class = "IsChecked" })
+                @Html.CheckBoxFor(modelItem => item.Task_IsChecked, new { id = item.Task_Id, @class = "isChecked" })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Task_LastUpdated_Date, new { id = item.Task_Id })
